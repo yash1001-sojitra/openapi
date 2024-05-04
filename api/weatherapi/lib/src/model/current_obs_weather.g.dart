@@ -8,7 +8,7 @@ part of 'current_obs_weather.dart';
 
 class _$CurrentObsWeather extends CurrentObsWeather {
   @override
-  final String? code;
+  final int? code;
   @override
   final String? description;
   @override
@@ -61,9 +61,9 @@ class CurrentObsWeatherBuilder
     implements Builder<CurrentObsWeather, CurrentObsWeatherBuilder> {
   _$CurrentObsWeather? _$v;
 
-  String? _code;
-  String? get code => _$this._code;
-  set code(String? code) => _$this._code = code;
+  int? _code;
+  int? get code => _$this._code;
+  set code(int? code) => _$this._code = code;
 
   String? _description;
   String? get description => _$this._description;

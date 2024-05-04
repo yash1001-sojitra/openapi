@@ -4127,7 +4127,7 @@ definitions:
           code:
             description: Weather Condition code
             example: "802"
-            type: string
+            type: integer
           description:
             description: Weather Condition description
             example: Broken clouds

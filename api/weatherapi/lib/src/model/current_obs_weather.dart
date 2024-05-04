@@ -19,7 +19,7 @@ abstract class CurrentObsWeather
     implements Built<CurrentObsWeather, CurrentObsWeatherBuilder> {
   /// Weather Condition code
   @BuiltValueField(wireName: r'code')
-  String? get code;
+  int? get code;
 
   /// Weather Condition description
   @BuiltValueField(wireName: r'description')
@@ -59,7 +59,7 @@ class _$CurrentObsWeatherSerializer
       yield r'code';
       yield serializers.serialize(
         object.code,
-        specifiedType: const FullType(String),
+        specifiedType: const FullType(int),
       );
     }
     if (object.description != null) {
@@ -104,8 +104,8 @@ class _$CurrentObsWeatherSerializer
         case r'code':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(String),
-          ) as String;
+            specifiedType: const FullType(int),
+          ) as int;
           result.code = valueDes;
           break;
         case r'description':

@@ -446,23 +446,23 @@ class CurrentWeatherDataApi {
 
     CurrentObsGroup? _responseData;
 
-    // try {
-    final rawResponse = _response.data;
-    _responseData = rawResponse == null
-        ? null
-        : _serializers.deserialize(
-            rawResponse,
-            specifiedType: const FullType(CurrentObsGroup),
-          ) as CurrentObsGroup;
-    // } catch (error, stackTrace) {
-    //   throw DioException(
-    //     requestOptions: _response.requestOptions,
-    //     response: _response,
-    //     type: DioExceptionType.unknown,
-    //     error: error,
-    //     stackTrace: stackTrace,
-    //   );
-    // }
+    try {
+      final rawResponse = _response.data;
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(CurrentObsGroup),
+            ) as CurrentObsGroup;
+    } catch (error, stackTrace) {
+      throw DioException(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
 
     return Response<CurrentObsGroup>(
       data: _responseData,
